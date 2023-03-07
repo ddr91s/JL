@@ -10,7 +10,7 @@ FILE="@$1"
 
 # Find the Best server to upload
 
-UPLOAD=$(curl -F file=${FILE} https://api.upvid.com/upload --progress-bar)
+UPLOAD=$(curl -F file=${FILE} https://api.upvid.cc/upload --progress-bar)
 
 LINK=$(echo $UPLOAD | jq -r '.data|.file|.url|.short')
 fileName=$(echo $UPLOAD | jq -r '.data|.file|.metadata|.name')
